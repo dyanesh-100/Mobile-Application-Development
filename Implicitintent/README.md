@@ -17,13 +17,86 @@ Latest Version Android Studio
 ```
 /*
 Program to print the text “Implicitintent”.
-Developed by:
-Registeration Number :
+Developed by:dyaneshwaran
+Registeration Number :212221040046
 */
 ```
+## ACTIVITYMAIN.XML:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAVIGATE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.2"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter the Link..."
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        tools:ignore="HardcodedText,LabelFor,SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+## MAINACTIVITY.JAVA
+```
+
+package com.example.implicit;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.net.Uri;
+import android.widget.Button;
+import android.widget.EditText;
+import android.os.Bundle;
+public class MainActivity extends AppCompatActivity {
+    Button button;
+    EditText editText;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        button = findViewById(R.id.button);
+        editText = findViewById(R.id.editTextTextPersonName);
+        button.setOnClickListener(view -> {
+            String url = editText.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        });
+    }}
+```
+
 
 ## OUTPUT
+![image](https://github.com/dyanesh-100/Mobile-Application-Development/assets/114641798/44c732d5-0ad0-47d3-8b52-78251529e8fd)
 
+![image](https://github.com/dyanesh-100/Mobile-Application-Development/assets/114641798/298d52e7-a6ba-48f4-a1f2-2f8a3bc5b99e)
+![image](https://github.com/dyanesh-100/Mobile-Application-Development/assets/114641798/1b238db7-ceff-4309-bce0-49a96a0f9bd2)
 
 
 
